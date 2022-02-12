@@ -9,6 +9,8 @@ class CoursesPage extends React.Component {
         title: "",
       },
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
