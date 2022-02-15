@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 class CoursesPage extends React.Component {
   state = {
@@ -34,4 +35,12 @@ class CoursesPage extends React.Component {
   }
 }
 
-export default CoursesPage;
+// This func determines what state is passed to our component via props.
+function mapStateToProps(state) {
+  return {
+    courses: state.courses,
+    // ! Be specific. Request only the data your componet needs, and no more.
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
